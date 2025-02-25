@@ -1,1 +1,1 @@
-Homeworks from course Front End Baisc (Hillel IT)
+Homeworks from course Front End Basic (Hillel IT)
