@@ -476,3 +476,208 @@ main{
     position: absolute;
     margin: 225px 240px;
 }
+
+.recommendations{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 150px 0 0px;
+    gap: 25px;
+}
+
+.recom-card{
+    background: #FBFBFB;
+    display: flex;
+    flex-direction: row;
+    /* padding: 40px 30px; */
+    justify-content: space-between;
+}
+
+.recom-card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* width: 260px; */
+    padding: 37px 30px 46px;
+}
+
+.flower-rec-image{
+    mix-blend-mode: multiply;
+    position: relative;
+    bottom: 20%;
+    /* width: 250px; */
+}
+
+.recom-card-button{
+    border-radius: 6px;
+    background: #46A358;
+    color: #FFF;
+    font-family: "Cera Pro Medium";
+    font-size: 14px;
+    line-height: 20px;
+    padding: 11px 27px 9px 28px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.recom-card-title{
+    color: #3D3D3D;
+    text-align: right;
+    font-family: "Cera Pro Bold";
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.recom-card-description{
+    color: #727272;
+    text-align: right;
+    font-family: "Cera Pro Regular";
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.blog-feed{
+    display: flex;
+    flex-direction: column;
+    padding: 150px 0 0px;
+}
+
+.blog-text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px 0;
+}
+
+.blog-title{
+    color: #3D3D3D;
+    text-align: center;
+    font-family: "Cera Pro Bold";
+    font-size: 30px;
+    line-height: 16px;
+}
+
+.blog-description{
+    color: #727272;
+    text-align: center;
+    font-family: "Cera Pro Regular";
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.blog-image-flower{
+    width: 248px;
+    height: 196px;
+}
+
+.blog-card{
+    background-color: #FBFBFB;;
+    /* width: 238px; */
+    width: 100%;
+    max-width: 248px;
+}
+
+.blog-posts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 39px;
+    flex-wrap: wrap;
+}
+
+.blog-card-text{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.blog-card-read{
+    padding: 5px 0;
+    color: #3D3D3D;
+    font-family: "Cera Pro Regular";
+    font-size: 14px;
+    line-height: 16px;
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.blog-card-date{
+    color: #46A358;
+    font-family: "Cera Pro Medium";
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.blog-card-title{
+    color: #3D3D3D;
+    font-family: "Cera Pro Bold";
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.blog-card-description{
+    color: #727272;
+    font-family: "Cera Pro Regular";
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.blog-arrow-right{
+    background-color: #3D3D3D;
+    color: #3D3D3D;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?a6vhsb');
+    src:  url('fonts/icomoon.eot?a6vhsb#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf') format('truetype'),
+        url('../fonts/icomoon.woff') format('woff'),
+        url('../fonts/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+[class^="icon-"], [class*=" icon-"]{
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.icon-arrow-right2:before {
+    content: "\ea3c";
+    color: #3D3D3D;
+    font-size: 14px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+}
+
+.icon-arrow-right2.recom:before {
+    content: "\ea3c";
+    color: #FFF;
+    font-size: 14px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+}
+
