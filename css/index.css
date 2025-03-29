@@ -252,8 +252,11 @@ main{
 
 .card-image{
     background: #FBFBFB;
-    padding: 30px 0;
+    padding: 15px 0 10px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .products{
@@ -339,6 +342,9 @@ main{
     font-family: "Cera Pro Bold";
     font-size: 18px;
     line-height: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
 }
 
 .card-text{
@@ -447,6 +453,7 @@ main{
 .flower-card{
     width: 240px;
     height: 240px;
+    padding: 10px 0 0 ;
 }
 
 .top-left-sphere{
@@ -631,27 +638,22 @@ main{
     line-height: 22px;
 }
 
-.blog-arrow-right{
-    background-color: #3D3D3D;
-    color: #3D3D3D;
-}
-
-@font-face {
+@font-face{
     font-family: 'icomoon';
-    src:  url('fonts/icomoon.eot?a6vhsb');
-    src:  url('fonts/icomoon.eot?a6vhsb#iefix') format('embedded-opentype'),
+    /* src: url('fonts/icomoon.eot?db34mr'); */
+    src: url('../fonts/icomoon.eot') format('embedded-opentype'),
         url('../fonts/icomoon.ttf') format('truetype'),
         url('../fonts/icomoon.woff') format('woff'),
         url('../fonts/icomoon.svg') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
-  }
+}
   
 [class^="icon-"], [class*=" icon-"]{
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
-    speak: never;
+    /* speak: never; */
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -664,20 +666,83 @@ main{
 }
   
 .icon-arrow-right2:before {
-    content: "\ea3c";
-    color: #3D3D3D;
+    content: "\e900";
+}
+
+.icon-heart-fav:before {
+    content: "\e901";
+}
+
+.icon-loupe-find:before {
+    content: "\e902";
+}
+
+.icon-shop-cart:before {
+    content: "\e903";
+}
+
+.icon-arrow-right2.recom:before {
+    color: #FFF;
     font-size: 14px;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
 }
 
-.icon-arrow-right2.recom:before {
-    content: "\ea3c";
-    color: #FFF;
+.icon-arrow-right2:before{
     font-size: 14px;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
+    color: #3D3D3D;
+}
+
+.card-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    visibility: hidden;
+}
+
+.card-image:hover .card-buttons{
+    visibility: visible;
+}
+
+.product-card-icon{
+    background: #FFFFFF;
+    padding: 5px;
+}
+
+.product-card-icon:hover{
+    color: #FFF;
+    background-color: #46A358;
+}
+
+.card-image:hover{
+    box-shadow: 0 1px 0 #46A358 inset;
+}
+
+.discount-size{
+    color: #FFF;
+    font-family: "Cera Pro Medium";
+    font-size: 16px;
+    line-height: 16px;
+    background: #46A358;
+    padding: 7px 8px 6px 9px;
+    margin-right: auto;
+    position: absolute;
+}
+
+.card-old-price{
+    color: #A5A5A5;
+    font-family: "Cera Pro Regular";
+    font-size: 18px;
+    line-height: 16px;
+    text-decoration: line-through;
+}
+
+.blog-card-read:hover{
+    color: #46A358;
 }
 
