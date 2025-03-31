@@ -47,6 +47,10 @@ header{
     border-bottom: 1px solid rgba(70, 163, 88, 0.50);
 }
 
+.header-logo{
+    cursor: pointer;
+}
+
 .list{
     display: flex;
     align-items: center;
@@ -58,11 +62,109 @@ header{
     font-family: 'Cera Pro Regular', sans-serif;
     color: #3D3D3D;
     font-size: 16px;
+    position: relative;
+    cursor: pointer;
 }
 
-.list-item.active{
-    border-bottom: 3px solid #46A358;
+.list-item:hover{
+    box-shadow: 0 -3px 0 #46A358 inset;
     font-family: 'Cera Pro Bold', sans-serif;
+}
+
+.dropdown-list{
+    position: absolute;
+    padding: 38px 0 0;
+    left: -20%;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-item{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #3D3D3D;
+    background: #EDF6EE;
+    flex-direction: row;
+    padding: 7px 15px 8px;
+}
+
+.list-item:hover .dropdown-list{
+    visibility: visible;
+    opacity: 1;
+    font-family: 'Cera Pro Regular';
+}
+
+.dropdown-item:hover{
+    color: #FFF;
+    font-family: "Cera Pro Bold";
+    font-size: 16px;
+    line-height: normal;
+    background: #1A712A;
+}
+
+.dropdown-sublist{
+    left: 100%;
+    top: 21.5%;
+    padding: 0 2px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    width: max-content;
+    min-width: 170px;
+}
+
+.dropdown-subitem{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #3D3D3D;
+    background: #EDF6EE;
+    flex-direction: row;
+    padding: 7px 10px 8px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 170px;
+}
+
+.dropdown-subitem:hover{
+    color: #FFF;
+    font-family: "Cera Pro Bold";
+    font-size: 16px;
+    line-height: normal;
+    background: #1A712A;
+}
+
+.open-sublist:hover .dropdown-sublist{
+    visibility: visible;
+    opacity: 1;
+    font-family: 'Cera Pro Regular';
+}
+
+.dropdown-arrow{
+    transform: scaleX(-1);
+    transition: 0.3s ease;
+    filter: invert(1);
+}
+
+.open-sublist:hover .dropdown-arrow{
+    transform: scaleX(1);
+    transition: 0.3s ease;
+    filter: invert(0);
+}
+
+.open-sublist-elem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 70px;
 }
 
 .cta{
@@ -76,6 +178,7 @@ header{
     background-color: #46A358;
     border: none;
     font-family: 'Cera Pro Medium', sans-serif;
+    cursor: pointer;
 }
 
 .intro-banner{
@@ -132,7 +235,7 @@ header{
     line-height: 20px;
     text-transform: uppercase;
     border: none;
-    margin-top: 44px;
+    margin-top: 44px;cursor: pointer;
 }
 
 .intro-flowers{
