@@ -8,6 +8,25 @@
     <link rel="shortcut icon" href="./img/logo-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+
+<script>
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      document.body.classList.add('loaded'); // возвращаем прокрутку
+
+      if (preloader) {
+        setTimeout(() => {
+          preloader.classList.add('hide');
+          setTimeout(() => preloader.style.display = 'none', 500); // плавное исчезновение
+        }, 500); // задержка
+      }
+    });
+</script>
+
 <body>
     <div class="auth_form">
 <!-- Switcher between registration and login -->
