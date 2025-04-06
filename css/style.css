@@ -460,7 +460,7 @@ main{
 .checkbox-list{
     display: flex;
     flex-direction: column;
-    padding: 0px 20px 10px 20px;
+    padding: 0px 20px;
 }
 
 .checkbox-list-custom{
@@ -489,12 +489,12 @@ main{
   color: #46A358;
 }
 
-.checkbox-number{
+/* .checkbox-number{
     color: #3D3D3D;
     font-family: "Cera Pro Regular";
     font-size: 15px;
     line-height: 40px;
-}
+} */
 
 .showcase-nav{
     display: flex;
@@ -661,7 +661,7 @@ main{
 }
 
 .price-filter{
-    padding: 20px 10px;
+    padding: 10px 10px;
 }
 
 .price-range{
@@ -693,11 +693,11 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5px 25px;
+    padding: 0px 25px;
 }
 
 .size{
-    padding: 10px;
+    padding: 5px 10px;
     color: #3D3D3D;
     font-family: "Cera Pro Bold";
     font-size: 18px;
@@ -1335,4 +1335,391 @@ footer{
     font-family: "Cera Pro Regular";
     font-size: 14px;
     line-height: 30px;
+}
+
+@media screen and (min-width: 1440px){
+    header{
+        padding: 30px 240px 20px;
+    }
+    
+    main{
+        padding: 0 240px;
+    }
+
+    .list-item{
+        font-size: 20px;
+    }
+
+    .cta{
+        font-size: 20px;
+        padding: 10px 30px 12px;
+    }
+    
+    .intro-banner{
+        justify-content: space-around;
+    }
+
+    .intro-text{
+        display: flex;
+        flex-direction: column;
+        padding: 60px 0px;
+        max-width: 700px;
+        gap: 20px;
+    }
+
+    .better{
+        font-size: 85px;
+        line-height: 80px;
+    }
+
+    .intro-flowers{
+        min-width: 600px;
+        background-position: 5% 94%;
+    }
+
+    .intro-image{
+        width: 502px;
+        height: 502px;
+    }
+
+    .shop{
+        max-width: 250px;
+        font-size: 20px;
+        padding: 15px 35px
+    }
+
+    .intro-text > p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .showcase{
+        padding: 0 0 0 50px;
+    }
+
+    .flower-card{
+        width: 310px;
+        height: 310px;
+    }
+
+    .flower4{
+        padding: 15px;
+    }
+
+    .side-nav{
+        padding: 20px;
+    }
+
+    .categories{
+        font-size: 26px;
+        line-height: 22px;
+    }
+
+    .checkbox-list-title{
+        font-size: 20px;
+    }
+
+    .checkbox-list{
+        gap: 10px;
+        padding: 10px 25px;
+    }
+
+    .showcase-tabs{
+        padding: 5px 0;
+    }
+
+    .arrow-sort{
+        width: 20px;
+        height: 20px;
+    }
+
+    .showcase-option{
+        font-size: 20px;
+    }
+
+    .showcase-option.active{
+        font-size: 20px;
+    }
+
+    .sorting{
+        font-size: 20px;
+    }
+    
+    .discount-size{
+        font-size: 22px;
+        padding: 10px 12px;
+    }
+
+    .card-text{
+        padding: 15px 0 5px;
+        gap: 5px;
+    }
+
+    .card-title{
+        font-size: 20px;
+    }
+
+    .card-price{
+        font-size: 22px;
+    }
+
+    .card-old-price{
+        font-size: 22px;
+    }
+
+   .products{
+        justify-content: space-between;
+        gap: 70px 0px;
+    }
+
+    .side-banners{
+        min-width: 500px;
+    }
+
+    .price-title{
+        font-size: 26px;
+    }
+
+    .price-range{
+        margin: 25px;
+    }
+
+    .price-name{
+        font-size: 20px;
+    }
+
+    .price-number{
+        font-size: 20px;
+    }
+
+    .filter-button{
+        font-size: 22px;
+        padding: 15px 40px;
+        margin: 20px;
+    }
+
+    .size{
+        padding: 10px;
+        font-size: 26px;
+    }
+
+    .size-option{
+        font-size: 20px;
+        line-height: 50px;
+    }
+
+    .size-quantity{
+        font-size: 20px;
+        line-height: 50px;
+    }
+
+    .sale-title{
+        font-size: 80px;
+        padding: 27px 20px;
+    }
+
+    .sale-description{
+        font-size: 32px;
+    }
+
+    .side-sale{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flower-sale{
+        width: 350px;
+        height: 450px;
+    }
+
+    .page{
+        font-size: 22px;
+        padding: 12px 22px;
+        align-content: center;
+    }
+
+    .page.active{
+        font-size: 22px;
+        padding: 12px 24px;
+    }
+
+    .arrow-next{
+        width: 25px;
+        height: 25px;
+        padding: 0;
+    }
+
+    .page-next{
+        padding: 17px 15px 13px;
+    }
+
+    .recommendations{
+        justify-content: space-between;
+    }
+
+    .recom-card-title{
+        font-size: 30px;
+    }
+
+    .recom-card-description{
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .recom-card-text{
+        display: flex;
+        flex-direction: column;
+        padding: 45px 45px;
+        gap: 40px;
+    }
+
+    .recom-card-button{
+        font-size: 22px;
+        min-width: 250px;
+        padding: 15px 25px;
+        line-height: 25px;
+    }
+
+    .recom-card{
+        max-width: 1000px;
+    }
+
+    .blog-title{
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+    .blog-description{
+        font-size: 25px;
+    }
+
+    .blog-posts{
+        justify-content: space-between;
+    }
+
+    .blog-image-flower{
+        width: 450px;
+        height: 350px;
+    }
+
+    .blog-card{
+        min-width: 450px;
+    }
+
+    .blog-card-text{
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .blog-card-date{
+        font-size: 22px;
+    }
+
+    .blog-card-title{
+        font-size: 30px;
+        line-height: 32px;
+        max-width: 350px;
+    }
+
+    .blog-card-description{
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .blog-card-read{
+        font-size: 20px;
+        line-height: 25px;
+    }
+    
+    .advant-card-title{
+        font-size: 24px;
+        line-height: 25px;
+    }
+
+    footer{
+        padding: 0 240px;
+    }
+
+    .advant-card{
+        padding: 15px 10px 15px 25px;
+    }
+
+    .advant-card-description{
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .email-letters-title{
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .email-input-field{
+        font-size: 18px;
+    }
+
+    .email-letters-description{
+        font-size: 20px;
+        line-height: 30px;
+        min-width: 450px;
+    }
+
+    .contacts{
+        padding: 25px;
+    }
+
+    .contacts > div{
+        min-width: 432.5px;
+    }
+
+    .contacts-location-text{
+        min-width: 250px;
+    }
+
+    .contacts > div > p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .contacts > div > div > span{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .site-map > div > nav > h3{
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .site-map > div > nav > ul > li{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .site-map-list{
+        gap: 10px;
+    }
+
+    .site-map-nav{
+        min-width: 390px;
+    }
+
+    .site-map > div > nav > div > div > h3{
+        font-size: 26px;
+        line-height: 30px;
+    }
+
+    .image-social-link{
+        width: 50px;
+        height: 50px;
+        padding: 12px;
+    }
+
+    .copyright-text{
+        font-size: 20px;
+    }
+
+    .copyright{
+        padding: 15px;
+    }
 }
