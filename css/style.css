@@ -434,6 +434,7 @@ main{
     display: flex;
     flex-direction: column;
     /* padding: 0 0 0 50px; */
+    width: 100%;
 }
 
 .side-banners{
@@ -750,8 +751,8 @@ main{
     height: 15px;
     border-radius: 29px;
     background: linear-gradient(145deg, rgba(70, 163, 88, 0.30) -46.09%, rgba(70, 163, 88, 0.00) 103.28%);
-    position: absolute;
-    margin: 0px 38px;
+    position: static;
+    margin: 0px 18px;
 }
 
 .bottom-left-square{
@@ -760,8 +761,8 @@ main{
     border-radius: 7px;
     border: 2px solid #46A358;
     opacity: 0.2;
-    position: absolute;
-    margin: 180px 16px;
+    position: static;
+    margin: 18px 16px;
 }
 
 .bottom-right-sphere{
@@ -769,16 +770,17 @@ main{
     height: 45px;
     border-radius: 29px;
     background: linear-gradient(145deg, rgba(70, 163, 88, 0.30) -46.09%, rgba(70, 163, 88, 0.00) 103.28%);
-    position: absolute;
-    margin: 225px 240px;
+    position: static;
+    margin: 25px 24px;
 }
 
 .recommendations{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     padding: 150px 0 0px;
     gap: 25px;
+    width: 100%;
 }
 
 .recom-card{
@@ -881,7 +883,7 @@ main{
 .blog-posts{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     gap: 39px;
     flex-wrap: wrap;
 }
@@ -1045,9 +1047,11 @@ footer{
 .advantages{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     background: #FBFBFB;
     padding: 25px;
     gap: 35px;
+    width: 100%;
 }
 
 .advant-card {
@@ -1203,6 +1207,8 @@ footer{
     line-height: 22px;
     gap: 100px;
     align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
     /* border-top: solid 1px #46A3581A;
     border-bottom: solid 1px #46A3581A; */
 }
@@ -1247,6 +1253,7 @@ footer{
     background: #FBFBFB;
     padding: 25px 35px;
     border-bottom: solid 1px #46A35833;
+    width: 100%;
 }
 
 .site-map-list{
@@ -1279,6 +1286,8 @@ footer{
     display: flex;
     flex-direction: row;
     gap: 150px;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .site-map-social{
@@ -1337,7 +1346,134 @@ footer{
     line-height: 30px;
 }
 
-@media screen and (min-width: 1440px){
+main{
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+header{
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+footer{
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+/* 2xl */
+@media (max-width: 1536px) {
+    main {
+      max-width: 1280px;
+    }
+    header {
+      max-width: 1280px;
+    }
+    footer {
+      max-width: 1280px;
+    }
+  }
+  
+  /* xl */
+  @media (max-width: 1280px) {
+    main {
+      max-width: 1024px;
+    }
+    header {
+      max-width: 1024px;
+    }
+    footer {
+      max-width: 1024px;
+    }
+  }
+  
+  /* lg */
+  @media (max-width: 1024px) {
+    main {
+      max-width: 1000px;
+    }
+    header {
+      max-width: 1000px;
+    }
+    footer {
+      max-width: 1000px;
+    }
+
+    .recommendations{
+        flex-direction: column;
+    }
+
+    .site-map-columns{
+        gap: 0;
+    }
+
+    .advantages{
+        gap: 0;
+        padding: 10px;
+    }
+
+    .advant-card{
+        padding: 0 10px;
+    }
+
+    .email-letters{
+        padding: 10px;
+    }
+
+    .contacts{
+        padding: 15px;
+        gap: 0;
+    }
+
+    .flower-card{
+        width: 170px;
+        height: 170px;
+    }
+
+    .flower-sale{
+        width: 230px;
+        height: 270px;
+    }
+
+    .side-sale{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-flowers{
+        align-content: center;
+        background-position: 13% 84%;
+    }
+
+    .side-banners{
+        min-width: 290px;
+    }
+
+    .sale-title{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .blog-image-flower{
+        width: 190px;
+        height: 150px;
+    }
+
+    .blog-card{
+        width: 190px;
+    }
+
+  }
+
+/* @media screen and (min-width: 1440px){
     header{
         padding: 30px 240px 20px;
     }
@@ -1722,4 +1858,4 @@ footer{
     .copyright{
         padding: 15px;
     }
-}
+} */
