@@ -1,114 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="./css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="shortcut icon" href="./img/logo-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
+<div id="preloader">
+  <div class="loader"></div>
+</div>
+
+<script>
+  // Показ прелоадера при загрузке страницы
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    document.body.classList.add('loaded'); // включаем прокрутку
+
+    if (preloader) {
+      setTimeout(() => {
+        preloader.classList.add('hide');
+        setTimeout(() => preloader.style.display = 'none', 500); // задержка для плавного исчезновения
+      }, 500); // задержка перед скрытием
+    }
+  });
+
+  // Переход на страницу регистрации
+  function goToRegistration() {
+    // Прелоадер не показываем при переходе
+    window.location.href = 'registration.html';
+  }
+</script>
+
 <body>
-   <main>
-      <aside class="side-menu">
+  <header>
+    <!-- logo -->
+    <div class="header">
+      <svg class="header-logo" xmlns="http://www.w3.org/2000/svg" width="150" height="35" viewBox="0 0 150 35" fill="none">
+        <g clip-path="url(#clip0_1_1069)">
+          <path
+            d="M17.15 0C7.67748 0 0 7.67746 0 17.15C0 26.0201 6.73548 33.3175 15.3711 34.207C14.8496 29.9134 15.0436 26.4001 15.7067 23.5135C15.3347 21.7225 14.4898 19.0703 12.5734 17.1864C12.5734 17.1864 13.8348 19.0784 14.5181 21.6214C14.5181 21.6255 14.5221 21.6295 14.5221 21.6335C14.5949 21.9044 14.6596 22.1793 14.7162 22.4623C14.7283 22.527 14.7404 22.5917 14.7526 22.6604C14.8051 22.9515 14.8536 23.2426 14.886 23.5418C5.19513 22.3532 3.12921 13.6569 3.35561 10.3781C13.665 10.9482 15.7754 17.8292 16.0827 22.0985C19.4585 11.0412 30.1843 10.4024 31.0697 10.3781C31.4538 18.8763 25.1509 25.5026 17.6149 26.0807C17.6635 25.8503 17.7201 25.6198 17.7767 25.3934C17.7928 25.3247 17.813 25.26 17.8333 25.1913C17.8777 25.0296 17.9222 24.8679 17.9748 24.7061C17.995 24.6374 18.0192 24.5646 18.0394 24.4959C18.096 24.318 18.1567 24.1442 18.2173 23.9663C18.2335 23.9259 18.2456 23.8854 18.2618 23.845C18.3386 23.6348 18.4195 23.4326 18.5003 23.2305C18.5084 23.2143 18.5125 23.1941 18.5205 23.1779C18.5205 23.1779 18.5205 23.1779 18.5246 23.1779C20.4571 18.5043 24.0229 15.4439 24.0229 15.4439C17.0247 19.4868 15.8441 29.9983 15.6582 34.2231C16.1514 34.2676 16.6446 34.2999 17.15 34.2999C26.6225 34.2999 34.3 26.6225 34.3 17.15C34.3 7.67746 26.6225 0 17.15 0Z"
+            fill="#46A358" />
+          <path
+            d="M46.7037 10.7454C48.9718 10.7454 50.8235 11.7197 52.0242 13.4986L49.7764 15.4109C48.9718 14.287 47.9975 13.7048 46.6471 13.7048C44.5691 13.7048 43.2753 15.0713 43.2753 17.1534C43.2753 19.2719 44.6418 20.695 46.8372 20.695C48.0177 20.695 48.9556 20.2826 49.554 19.5912V19.0091H46.6673V16.2356H52.7762V20.133C52.194 21.1639 51.3693 21.9887 50.3019 22.6234C49.2346 23.242 48.0339 23.5614 46.7037 23.5614C42.9923 23.618 39.9237 20.7313 39.9763 17.1534C39.9197 13.5956 42.9923 10.6888 46.7037 10.7454Z"
+            fill="#46A358" />
+          <path
+            d="M61.9576 23.3316L59.168 19.4908H57.8379V23.3316H54.6157V10.9684H59.4672C62.2204 10.9684 64.2459 12.6543 64.2459 15.2215C64.2459 16.7376 63.5141 17.995 62.2972 18.7429L65.5558 23.3316H61.9576ZM57.8338 16.681H59.4833C60.3809 16.681 60.963 16.0988 60.963 15.2215C60.963 14.3442 60.3809 13.7782 59.4833 13.7782H57.8338V16.681Z"
+            fill="#46A358" />
+          <path
+            d="M66.8333 10.9684H75.4124V13.8712H70.0555V15.5773H73.876V18.2739H70.0555V20.4288H75.6388V23.3316H66.8333V10.9684Z"
+            fill="#46A358" />
+          <path
+            d="M77.6441 10.9684H86.2231V13.8712H80.8663V15.5773H84.6868V18.2739H80.8663V20.4288H86.4495V23.3316H77.6441V10.9684Z"
+            fill="#46A358" />
+          <path
+            d="M99.4192 10.9683V23.5579H98.3882L91.681 17.057V23.3315H88.4588V10.7419H89.4897L96.197 17.1499V10.9683H99.4192Z"
+            fill="#46A358" />
+          <path
+            d="M103.264 19.135C103.996 20.1094 104.764 20.7279 106.017 20.7279C106.862 20.7279 107.291 20.4288 107.291 19.8264C107.291 19.2846 107.008 19.1148 106.033 18.6822L104.76 18.1203C102.718 17.2187 101.631 16.0584 101.631 14.3927C101.631 12.2014 103.43 10.7379 105.957 10.7379C107.998 10.7379 109.442 11.7123 110.19 13.2283L108.035 14.8778C107.436 13.9803 106.874 13.5679 105.993 13.5679C105.318 13.5679 104.889 13.8307 104.889 14.3563C104.889 14.8051 105.152 15.0517 105.957 15.367L107.38 15.9654C109.535 16.867 110.545 17.9505 110.545 19.6929C110.545 22.0904 108.576 23.5539 106.009 23.5539C103.782 23.5539 101.982 22.4866 101.081 20.7805L103.264 19.135Z"
+            fill="#46A358" />
+          <path
+            d="M112.393 10.9684H115.615V15.4843H120.131V10.9684H123.353V23.3316H120.131V18.3871H115.615V23.3316H112.393V10.9684Z"
+            fill="#46A358" />
+          <path
+            d="M131.843 10.7419C135.441 10.6651 138.607 13.6084 138.53 17.1499C138.603 20.7279 135.441 23.6145 131.843 23.5579C128.229 23.6145 125.116 20.7279 125.193 17.1499C125.116 13.6084 128.229 10.6692 131.843 10.7419ZM131.859 13.7014C129.874 13.7014 128.488 15.1083 128.488 17.1499C128.488 18.1809 128.807 19.0218 129.426 19.6606C130.044 20.2791 130.869 20.5985 131.859 20.5985C133.772 20.5985 135.231 19.2118 135.231 17.1499C135.235 15.1083 133.772 13.7014 131.859 13.7014Z"
+            fill="#46A358" />
+          <path
+            d="M140.374 10.9684H145.226C147.979 10.9684 150.004 12.6543 150.004 15.2215C150.004 17.7524 147.926 19.4908 145.226 19.4908H143.596V23.3316H140.374V10.9684ZM145.242 16.681C146.139 16.681 146.721 16.0988 146.721 15.2215C146.721 14.3442 146.139 13.7782 145.242 13.7782H143.592V16.681H145.242Z"
+            fill="#46A358" />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_1069">
+            <rect width="150" height="34.2999" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+      <!-- navigation -->
+      <nav class="list">
+        <li class="list-item active">Home</li>
+        <li class="list-item">Shop</li>
+        <li class="list-item">
+          Plant Care
+          <ul class="dropdown-list">
+            <li class="dropdown-item">Drainage</li>
+            <li class="dropdown-item">Fungicides</li>
+            <li class="dropdown-item">Fertilizer</li>
+            <li class="dropdown-item open-sublist">
+              <div class="open-sublist-elem">
+                <span class="dropdown-item-title">Priming</span>
+                <img class="dropdown-arrow" src="./img/arrow-header-drop.svg" alt="open dropdown sublist arrow">
+              </div>
+              <ul class="dropdown-sublist">
+                <li class="dropdown-subitem">Universal</li>
+                <li class="dropdown-subitem">For Ficus</li>
+                <li class="dropdown-subitem">For Cacti</li>
+                <li class="dropdown-subitem">For Citrus</li>
+                <li class="dropdown-subitem">For those in bloom</li>
+                <li class="dropdown-subitem">For Orchids</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="list-item">Blogs</li>
+      </nav>
+      <!-- registration button -->
+      <button class="cta" onclick="goToRegistration()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M17.1601 9.1006H7.12598" stroke="white" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M14.7212 6.67059L17.1612 9.10059L14.7212 11.5306" stroke="white" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M12.6342 5.35826C12.3592 2.37493 11.2425 1.2916 6.80082 1.2916C0.883322 1.2916 0.883322 3.2166 0.883322 8.99993C0.883322 14.7833 0.883322 16.7083 6.80082 16.7083C11.2425 16.7083 12.3592 15.6249 12.6342 12.6416"
+            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Login
+      </button>
+    </div>
+  </header>
+  <main>
+    <!-- website description -->
+    <section class="intro-banner">
+      <article class="intro-text">
+        <p class="welcome">
+          Welcome to GreenShop
+        </p>
+        <h1 class="better">
+          Let’s Make a Better <span class="planet">Planet</span>
+        </h1>
+        <p class="description">
+          We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to create an
+          unique Urban Jungle. Order your favorite plants!
+        </p>
+        <!-- shop button -->
+        <button class="shop">
+          Shop now
+        </button>
+      </article>
+      <!-- demonstration images -->
+      <div class="intro-flowers">
+        <img class="intro-image" src="./img/flower_big.png" alt="big flower">
+      </div>
+    </section>
+  <section class="main-content">
+      <aside class="side-banners">
         <div class="side-nav">
           <p class="categories">Categories</p>
-          <nav class="list-nav">
-            <li class="list-current">House Plants</li>
-            <li>Potter Plants</li>
-            <li>Seeds</li>
-            <li>Big Plants</li>
-            <li>Succulents</li>
-            <li>Terrariums</li>
-            <li>Gardening </li>
-            <li>Accessories</li>
-          </nav>
+            <div class="checkbox-list list-plants">
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox1" hidden>
+                <label class="checkbox-list-title" for="checkbox1">
+                  <span class="label-custom">House Plants</span>
+                  <span class="checkbox-number">(33)</span>
+                </label>
+              </div>            
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox2" hidden>
+                <label class="checkbox-list-title" for="checkbox2">
+                  <span class="label-custom">Potter Plants</span>
+                  <span class="checkbox-number">(12)</span>
+                </label>
+              </div>            
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox3" hidden>
+                <label class="checkbox-list-title" for="checkbox3">
+                  <span class="label-custom">Seeds</span>
+                  <span class="checkbox-number">(65)</span>
+                </label>
+              </div>            
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox4" hidden>
+                <label class="checkbox-list-title" for="checkbox4">
+                  <span class="label-custom">Small Plants</span>
+                  <span class="checkbox-number">(39)</span>
+                </label>
+              </div>            
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox5" hidden>
+                <label class="checkbox-list-title" for="checkbox5">
+                  <span class="label-custom">Big Plants</span>
+                  <span class="checkbox-number">(23)</span>
+                </label>
+              </div>            
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox6" hidden>
+                <label class="checkbox-list-title" for="checkbox6">
+                  <span class="label-custom">Succulents</span>
+                  <span class="checkbox-number">(17)</span>
+                </label>
+              </div>            
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox7" hidden>
+                <label class="checkbox-list-title" for="checkbox7">
+                  <span class="label-custom">Terrariums</span>
+                  <span class="checkbox-number">(19)</span>
+                </label>
+              </div>            
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox8" hidden>
+                <label class="checkbox-list-title" for="checkbox8">
+                  <span class="label-custom">Gardening</span>
+                  <span class="checkbox-number">(13)</span>
+                </label>
+              </div>            
+              <div class="checkbox-list-custom">
+                <input class="checkbox-custom" type="checkbox" id="checkbox9" hidden>
+                <label class="checkbox-list-title" for="checkbox9">
+                  <span class="label-custom">Accessories</span>
+                  <span class="checkbox-number">(18)</span>
+                </label>
+              </div>            
+          </div>
+          <div class="price-filter">
+            <p class="price-title">Price Range</p>
+            <input class="price-range" type="range">
+            <div class="price-value">
+              <p class="price-name">Price:</p>
+              <p class="price-number">$39 - $1230</p>
+            </div>
+            <button class="filter-button">Filter</button>
+          </div>
+          <p class="size">Size</p>
+          <div class="size-lists">
+            <nav class="size-name">
+              <p class="size-option">Small</p>
+              <p class="size-option">Medium</p>
+              <p class="size-option">Large</p>
+            </nav>
+            <nav class="size-number">
+              <p class="size-quantity">(119)</p>
+              <p class="size-quantity">(86)</p>
+              <p class="size-quantity">(78)</p>
+            </nav>
+          </div>
         </div>
-        <div class="sale-banner">
-          <p class="sale-name">Super Sale</p>
-          <p class="discount">UP TO 75% OFF</p>
-          <div class="top-sphere"></div>
-          <div class="left-square"></div>
-          <div class="right-sphere"></div>
+        <div class="side-sale">
+          <p class="sale-title">Super Sale</p>
+          <p class="sale-description">UP TO 75% OFF</p>
+          <!-- <div class="top-left-sphere"></div>
+          <div class="bottom-left-square"></div>
+          <div class="bottom-right-sphere"></div> -->
+          <img class="flower-sale" src="./img/flower-sale.png" alt="flower on sale">
         </div>
       </aside>
     <section class="showcase">
-      <section class="switchers">
-        <div class="tabs">
-          <p class="tabs-active">All Plants</p>
-          <p>New Arrivals</p>
-          <p>Sale</p>
-        </div>
+      <div class="showcase-tabs">
+        <nav class="showcase-nav">
+          <li class="showcase-option active">All plants</li>
+          <li class="showcase-option">New arrivals</li>
+          <li class="showcase-option">Sale</li>
+        </nav>
         <div class="sorting">
           <p class="sort-by">Sort by:</p>
           <p class="sort-method">Default sorting</p>
-          <img class="arrow-method" src="./img/arrow-down.svg" alt="arrow-show-methods">
+          <img class="arrow-sort" src="./img/arrow-down.svg" alt="arrow-sort-method">
         </div>
-      </section>
+      </div>
       <section class="products">
-        <div class="card-product item1">
-          <div class="card-text">
-            <p class="card-title">Barberton Daisy</p>
-            <p class="card-price">$119.00</p>
+      <div class="card-product">
+        <div class="card-image">
+          <img class="flower-card" src="./img/flower1.png" alt="flower">
+          <div class="card-buttons">
+            <span class="icon-shop-cart product-card-icon"></span>
+            <span class="icon-heart-fav product-card-icon"></span>
+            <span class="icon-loupe-find product-card-icon"></span>
           </div>
         </div>
-        <div class="card-product item2">
-          <div class="card-text">
-            <p class="card-title">Angel Wing Begonia</p>
-            <p class="card-price">$169.00</p>
+        <div class="card-text">
+          <p class="card-title">Barberton Daisy</p>
+          <p class="card-price">$119.00</p>
+        </div>
+      </div>
+      <div class="card-product">
+        <div class="card-image">
+          <img class="flower-card" src="./img/flower2.png" alt="flower">
+          <div class="card-buttons">
+            <span class="icon-shop-cart product-card-icon"></span>
+            <span class="icon-heart-fav product-card-icon"></span>
+            <span class="icon-loupe-find product-card-icon"></span>
           </div>
         </div>
-        <div class="card-product item3">
-          <div class="card-text">
-            <p class="card-title">African Violet</p>
-            <p class="card-price">$199.00</p>
+        <div class="card-text">
+          <p class="card-title">Angel Wing Begonia</p>
+          <p class="card-price">$169.00</p>
+        </div>
+      </div>
+      <div class="card-product">
+        <div class="card-image">
+          <div class="discount-size">13% OFF</div>
+          <img class="flower-card" src="./img/flower3.png" alt="flower">
+          <div class="card-buttons">
+            <span class="icon-shop-cart product-card-icon"></span>
+            <span class="icon-heart-fav product-card-icon"></span>
+            <span class="icon-loupe-find product-card-icon"></span>
           </div>
         </div>
-        <div class="card-product item4">
-          <div class="card-text">
-            <p class="card-title">Beach Spider Lily</p>
-            <p class="card-price">$129.00</p>
+        <div class="card-text">
+          <p class="card-title">African Violet</p>
+          <p class="card-price">
+            <span class="card-new-price">$199.00</span>
+            <span class="card-old-price">$229.00</span></p>
+        </div>
+      </div>
+      <div class="card-product product4">
+        <div class="card-image">
+          <img class="flower-card flower4" src="./img/flower4-1.png" alt="flower">
+          <div class="card-buttons">
+            <span class="icon-shop-cart product-card-icon"></span>
+            <span class="icon-heart-fav product-card-icon"></span>
+            <span class="icon-loupe-find product-card-icon"></span>
           </div>
         </div>
-        <div class="card-product item5">
-          <div class="card-text">
-            <p class="card-title">Blushing Bromeliad</p>
-            <p class="card-price">$139.00</p>
+        <div class="card-text">
+          <p class="card-title">Beach Spider Lily</p>
+          <p class="card-price">$129.00</p>
+        </div>
+      </div>
+      <div class="card-product">
+        <div class="card-image">
+          <img class="flower-card" src="./img/flower5.png" alt="flower">
+          <div class="card-buttons">
+            <span class="icon-shop-cart product-card-icon"></span>
+            <span class="icon-heart-fav product-card-icon"></span>
+            <span class="icon-loupe-find product-card-icon"></span>
           </div>
         </div>
-        <div class="card-product item6">
-          <div class="card-text">
-            <p class="card-title">Aluminum Plant</p>
-            <p class="card-price">$179.00</p>
+        <div class="card-text">
+          <p class="card-title">Blushing Bromeliad</p>
+          <p class="card-price">$139.00</p>
+        </div>
+      </div>
+      <div class="card-product">
+        <div class="card-image">
+          <img class="flower-card" src="./img/flower6.png" alt="flower">
+          <div class="card-buttons">
+            <span class="icon-shop-cart product-card-icon"></span>
+            <span class="icon-heart-fav product-card-icon"></span>
+            <span class="icon-loupe-find product-card-icon"></span>
           </div>
         </div>
-        <div class="card-product item7">
-          <div class="card-text">
-            <p class="card-title">Bird's Nest Fern</p>
-            <p class="card-price">$99.00</p>
+        <div class="card-text">
+          <p class="card-title">Aluminum Plant</p>
+          <p class="card-price">$179.00</p>
+        </div>
+      </div>
+      <div class="card-product">
+        <div class="card-image">
+          <img class="flower-card" src="./img/flower7.png" alt="flower">
+          <div class="card-buttons">
+            <span class="icon-shop-cart product-card-icon"></span>
+            <span class="icon-heart-fav product-card-icon"></span>
+            <span class="icon-loupe-find product-card-icon"></span>
           </div>
         </div>
-        <div class="card-product item8">
+        <div class="card-text">
+          <p class="card-title">Bird's Nest Fern</p>
+          <p class="card-price">$99.00</p>
+        </div>
+      </div>
+        <div class="card-product">
+          <div class="card-image">
+            <img class="flower-card" src="./img/flower8.png" alt="flower">
+            <div class="card-buttons">
+              <span class="icon-shop-cart product-card-icon"></span>
+              <span class="icon-heart-fav product-card-icon"></span>
+              <span class="icon-loupe-find product-card-icon"></span>
+            </div>
+          </div>
           <div class="card-text">
             <p class="card-title">Broadleaf Lady Palm</p>
             <p class="card-price">$59.00</p>
           </div>
         </div>
-        <div class="card-product item9">
+        <div class="card-product">
+          <div class="card-image">
+            <img class="flower-card" src="./img/flower9.png" alt="flower">
+            <div class="card-buttons">
+              <span class="icon-shop-cart product-card-icon"></span>
+              <span class="icon-heart-fav product-card-icon"></span>
+              <span class="icon-loupe-find product-card-icon"></span>
+            </div>
+          </div>
           <div class="card-text">
             <p class="card-title">Chinese Evergreen</p>
             <p class="card-price">$39.00</p>
           </div>
         </div>
       </section>
-      <div class="pagination">
-        <p class="page current">1</p>
-        <p class="page">2</p>
-        <p class="page">3</p>
-        <p class="page">4</p>
-        <p class="page-next">
-          <img class="arrow-next" src="./img/arrow-down.svg" alt="arrow-next-page">
-        </p>
+      <nav class="pagination">
+        <li class="page active">1</li>
+        <li class="page">2</li>
+        <li class="page">3</li>
+        <li class="page">4</li>
+        <li class="page-next"><img class="arrow-next" src="./img/arrow-down.svg" alt="arrow-next-page"></li>
+      </nav>
+    </section>
+  </section>
+  <section class="recommendations">
+    <div class="recom-card left">
+      <img class="flower-rec-image" src="./img/flower-rec-left.png" alt="recommendation flower">
+      <div class="recom-card-text">
+        <p class="recom-card-title">Summer cactus & succulents</p>
+        <p class="recom-card-description">We are an online plant shop offering a wide range of cheap and trendy plants</p>
+        <button class="recom-card-button">
+          Find More
+          <span class="icon-arrow-right2 recom"></span>
+        </button>
+      </div>
+    </div>
+    <div class="recom-card right">
+      <img class="flower-rec-image" src="./img/flower-rec-right.png" alt="recommendation flower">
+      <div class="recom-card-text">
+        <p class="recom-card-title">Styling Trends & much more</p>
+        <p class="recom-card-description">We are an online plant shop offering a wide range of cheap and trendy plants</p>
+        <button class="recom-card-button">
+          Find More
+          <span class="icon-arrow-right2 recom"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="blog-feed">
+    <div class="blog-text">
+      <p class="blog-title">Our Blog Posts</p>
+      <p class="blog-description">We are an online plant shop offering a wide range of cheap and trendy plants. </p>
+    </div>
+    <div class="blog-posts">
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img class="blog-image-flower" src="./img/flower-blog-1.png" alt="flower blog">
+        </div>
+        <div class="blog-card-text">
+          <p class="blog-card-date">September 12  I Read in 6 minutes</p>
+          <p class="blog-card-title">Cactus & Succulent Care Tips</p>
+          <p class="blog-card-description">Cacti are succulents are easy care plants for any home or patio. </p>
+          <p class="blog-card-read">
+            <span class="blog-read-text">Read More</span>
+            <span class="icon-arrow-right2"></span>
+          </p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img class="blog-image-flower" src="./img/flower-blog-2.jpg" alt="flower blog">
+        </div>
+        <div class="blog-card-text">
+          <p class="blog-card-date">September 13  I Read in 2 minutes</p>
+          <p class="blog-card-title">Top 10 Succulents for Your Home</p>
+          <p class="blog-card-description">Best in hanging baskets. Prefers medium to high light.</p>
+          <p class="blog-card-read">
+            Read More
+            <span class="icon-arrow-right2"></span>
+          </p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img class="blog-image-flower" src="./img/flower-blog-3.png" alt="flower blog">
+        </div>
+        <div class="blog-card-text">
+          <p class="blog-card-date">September 15  I Read in 3 minutes</p>
+          <p class="blog-card-title">Cacti & Succulent Care Tips</p>
+          <p class="blog-card-description">Cacti and succulents thrive in containers and because most are..</p>
+          <p class="blog-card-read">
+            Read More
+            <span class="icon-arrow-right2"></span>
+          </p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img class="blog-image-flower" src="./img/flower-blog-4.png" alt="flower blog">
+        </div>
+        <div class="blog-card-text">
+          <p class="blog-card-date">September 15  I Read in 2 minutes</p>
+          <p class="blog-card-title">Best Houseplants Room by Room</p>
+          <p class="blog-card-description">The benefits of houseplants are endless. In addition to..</p>
+          <p class="blog-card-read">
+            Read More 
+            <span class="icon-arrow-right2"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer>
+    <section class="advantages">
+      <div class="advant-card">
+        <div class="advant-card-image">
+          <img class="advant-card-image-top1" src="./img/advant-flower1.svg" alt="">
+          <img class="advant-card-image-bottom1" src="./img/advant-vase1.svg" alt="">
+        </div>
+        <div class="advant-card-text">
+          <h3 class="advant-card-title">Garden Care</h3>
+          <p class="advant-card-description">We are an online plant shop offering a wide range of cheap and trendy plants.</p>
+        </div>
+      </div>
+      <div class="advant-card adv-card2">
+        <div class="advant-card-image">
+          <img class="advant-card-image-top2" src="./img/advant-flower2.svg" alt="">
+          <img class="advant-card-image-bottom2" src="./img/advant-vase2.svg" alt="">
+        </div>
+        <div class="advant-card-text">
+          <h3 class="advant-card-title">Plant Renovation</h3>
+          <p class="advant-card-description">We are an online plant shop offering a wide range of cheap and trendy plants.</p>
+        </div>
+      </div>
+      <div class="advant-card">
+        <div class="advant-card-image">
+          <img class="advant-card-image-top3" src="./img/advant-flower3.svg" alt="">
+          <img class="advant-card-image-bottom3" src="./img/advant-vase3.svg" alt="">
+        </div>
+        <div class="advant-card-text">
+          <h3 class="advant-card-title">Watering Graden</h3>
+          <p class="advant-card-description">We are an online plant shop offering a wide range of cheap and trendy plants.</p>
+        </div>
+      </div>
+      <div class="email-letters">
+        <h3 class="email-letters-title">Would you like to join newsletters?</h3>
+        <div class="email-form">
+          <input class="email-input-field" id="email-input" type="email" placeholder="enter your email address...">
+          <label class="email-input-button" for="email-input">Join</label>
+        </div>
+        <p class="email-letters-description">We usually post offers and challenges in newsletter. We’re your online houseplant destination. We offer a wide range of houseplants and accessories shipped directly from our (green)house to yours!</p>
       </div>
     </section>
-    </main>
+    <section class="contacts">
+      <div class="contacts-logo">
+        <img class="contacts-image" src="./img/contacts-logo.svg" alt="greenshop logotype">
+      </div>
+      <div class="contacts-location">
+        <img src="./img/location-logo.svg" alt="find location">
+        <div class="contacts-location-text">
+          <span>70 West Buckingham Ave.</span>
+          <span>Farmingdale, NY 11735</span>
+        </div>
+      </div>
+      <div class="contacts-email">
+        <img src="./img/email-logo.svg" alt="write email">
+        <p class="contacts-location-text">contact@greenshop.com</p>
+      </div>
+      <div class="contacts-phone">
+        <img src="./img/phone-logo.svg" alt="call number">
+        <p class="contacts-location-text">+88 01911 717 490</p>
+      </div>
+    </section>
+  <section class="site-map">
+    <div class="site-map-columns">
+      <nav class="site-map-nav">
+        <h3 class="site-map-title">My Account</h3>
+        <ul class="site-map-list">
+          <li class="site-map-item">My Account</li>
+          <li class="site-map-item">Our stores</li>
+          <li class="site-map-item">Contact us</li>
+          <li class="site-map-item">Career</li>
+          <li class="site-map-item">Specials</li>
+        </ul>
+      </nav>
+      <nav class="site-map-nav">
+        <h3 class="site-map-title">Help & Guide</h3>
+        <ul class="site-map-list">
+          <li class="site-map-item">Help Center</li>
+          <li class="site-map-item">How to Buy</li>
+          <li class="site-map-item">Shipping & Delivery</li>
+          <li class="site-map-item">Product Policy</li>
+          <li class="site-map-item">How to Return</li>
+        </ul>
+      </nav>
+      <nav class="site-map-nav">
+        <h3 class="site-map-title">Categories</h3>
+        <ul class="site-map-list">
+          <li class="site-map-item">House Plants</li>
+          <li class="site-map-item">Potter Plants</li>
+          <li class="site-map-item">Seeds</li>
+          <li class="site-map-item">Small Plants</li>
+          <li class="site-map-item">Accessories</li>
+        </ul>
+      </nav>
+      <nav class="site-map-nav">
+        <div class="contacts-payment">
+          <div class="site-map-social">
+            <h3 class="site-map-social-title">Social Media</h3>
+            <div class="social-links">
+              <img class="image-social-link social-link1" src="./img/Facebook-logo.svg" alt="link facebook">
+              <img class="image-social-link" src="./img/Instagram-logo.svg" alt="link instagram">
+              <img class="image-social-link" src="./img/Twitter-logo.svg" alt="link twitter">
+              <img class="image-social-link" src="./img/Linkedin-logo.svg" alt="link linkedin">
+              <img class="image-social-link" src="./img/youtube-logo.svg" alt="link youtube">
+            </div> 
+          </div>
+          <div class="site-map-payment">
+            <h3 class="site-map-payment-title">We accept</h3>
+            <img src="./img/payment-methods.png" class="site-map-payment-methods" alt="payment methods">
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <section class="copyright">
+    <p class="copyright-text">
+      © 2021 GreenShop. All Rights Reserved.
+    </p>
+  </section>
+  </footer>
 </body>
 </html>
